@@ -18,9 +18,8 @@ func main() {
 		log.Fatal(err.Error())
 	}
 
-	newRepo := user.NewRepository(db)
-	userService := user.NewService(newRepo)
-
+	userRepo := user.NewRepository(db)
+	userService := user.NewService(userRepo)
 	userHandler := handler.NewUserHandler(userService)
 
 	router := gin.Default()
@@ -28,6 +27,7 @@ func main() {
 	api := router.Group("api/v1")
 
 	api.POST("/users", userHandler.RegisterUser)
+	api.POST("/sessions", userHandler.Login)
 
 	router.Run()
 }
