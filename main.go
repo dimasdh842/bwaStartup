@@ -23,7 +23,6 @@ func main() {
 	userService := user.NewService(userRepo)
 	authService := auth.NewService()
 	userHandler := handler.NewUserHandler(userService, authService)
-
 	router := gin.Default()
 
 	api := router.Group("api/v1")
