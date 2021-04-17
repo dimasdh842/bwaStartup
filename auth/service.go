@@ -45,7 +45,7 @@ func (s *jwtService) ValidateToken(tokenToValidate string) (*jwt.Token, error) {
 	})
 
 	if err != nil {
-		return token, nil
+		return token, err
 	}
 
 	return token, nil
