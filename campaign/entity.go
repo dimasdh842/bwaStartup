@@ -4,13 +4,25 @@ import "time"
 
 type Campaign struct {
 	ID               int
+	userID           int
 	Name             string
 	ShortDescription string
 	Description      string
+	Perks            string
+	BeckerCount      int
 	GoalAmount       int
 	CurrentAmount    int
-	perks            string
-	BeckerCount      int
+	Slug             string
 	CreatedAt        time.Time
 	UpdatedAt        time.Time
+	CampaignImages   []CampaignImage
+}
+
+type CampaignImage struct {
+	ID         int
+	CampaignID int
+	FileName   string
+	IsPrimary  int
+	CreatedAt  time.Time
+	UpdatedAt  time.Time
 }
