@@ -2,7 +2,6 @@ package main
 
 import (
 	"bwastartup/auth"
-	"bwastartup/campaign"
 	"bwastartup/handler"
 	"bwastartup/helper"
 	"bwastartup/user"
@@ -25,11 +24,13 @@ func main() {
 	}
 
 	userRepo := user.NewRepository(db)
-	campaignRepo := campaign.NewRepository(db)
-	// campaigns, err := campaignRepo.FindByUserID(28)
+	// campaignRepo := campaign.NewRepository(db)
+	// campaignService := campaign.NewService(campaignRepo)
+	// userID := 29
+	// campaigns, err := campaignService.FindCampaigns(userID)
 	// if err != nil {
-	// 	fmt.Println(err)
-	// 	return
+	// fmt.Println(err)
+	// return
 	// }
 
 	// for _, campaign := range campaigns {
